@@ -1,0 +1,72 @@
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bus Calender</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style2.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+
+<div ng-app="sortTable" ng-controller="mainCtrl as main" class="container">
+  <div class="filter-table">
+     
+ <!-- <input type="text" placeholder="Buscar.." ng-model="search.person1 + search.person2"/>
+  </div>-->
+
+  <select class="picker" ng-model="search.person2">
+    <option value="">Destino: Todos</option>
+
+    <option value="La Paloma">La Paloma</option>
+    <option value="La Pedrera">La Pedrera</option>
+    <option value="Punta del Diablo">Punta del Diablo</option>    
+    <option value="La Coronilla">La Coronilla</option>
+    <option value="Lascano">Lascano</option>
+    <option value="Velazquez">Velazquez</option>
+    <option value="Castillos">Castillos</option>
+    <option value="Chuy">Chuy</option>
+
+    <option value="Treinta y Tres">Treinta y Tres</option>
+
+    <option value="Maldonado">Maldonado</option>
+    <option value="San Carlos">San Carlos</option>
+    <option value="Pan De Azúcar">Pan De Azúcar</option>
+
+    <option value="La Pedrera">Aero. Carrasco</option>
+    <option value="Montevideo">Montevideo</option>
+
+
+  </select>   
+      
+<table>
+  <thead>
+    <tr>      
+      <th ng-click="main.changeSortType('salida')">&nbsp;Salida<span style="float:center;"><i class=""></i></span>       
+      </th>
+      <th ng-click="main.changeSortType('destino')">&nbsp;Destino<span style="float:center;"><i class=""></i></span>       
+     </th>
+     <th ng-click="main.changeSortType('frecuencia')">&nbsp;Frecuencia<span style="float:center;"><i class=""></i></span>       
+     </th>
+      <th ng-click="main.changeSortType('empresa')"> &nbsp;Bus<span style="float:center;"><i class=""></i></span> 
+     </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="person in main.persons | filter:Rocha | filter:search.person2 | orderBy: main.orderType : main.orderReverse">
+      <td>{{ person.salida }}</td>
+      <td>{{ person.destino }}</td>
+      <td>{{ person.frecuencia }}</td>
+      <td>{{ person.empresa }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+  <script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script><script  src="./script.js"></script>
+
+</body>
+
